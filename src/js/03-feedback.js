@@ -38,6 +38,11 @@ function onFormInput(e) {
 // populating saved data
 function populateFormData() {
     const savedFormData = localStorage.getItem('feedback-form-state');
+
+    if (!savedFormData) {
+        return;
+    };
+
     formData = JSON.parse(savedFormData);
     
     if (formData) {
